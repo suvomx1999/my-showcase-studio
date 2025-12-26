@@ -1,23 +1,6 @@
-import { Github, Linkedin, Mail, Download, ChevronDown, Camera } from 'lucide-react';
-import { useState } from 'react';
+import { Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react';
 
-interface HeroSectionProps {
-  profileImage: string | null;
-  onImageUpload: (file: File) => void;
-}
-
-const HeroSection = ({ profileImage, onImageUpload }: HeroSectionProps) => {
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      onImageUpload(file);
-    }
-    // Reset value to allow selecting the same file again
-    e.target.value = '';
-  };
-
+const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background Effects */}
@@ -102,8 +85,6 @@ const HeroSection = ({ profileImage, onImageUpload }: HeroSectionProps) => {
           <div 
             className="relative animate-fade-in"
             style={{ animationDelay: '0.3s' }}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
           >
             <div className="w-72 h-72 md:w-96 md:h-96 rounded-full relative">
               {/* Glow Ring */}
@@ -113,38 +94,11 @@ const HeroSection = ({ profileImage, onImageUpload }: HeroSectionProps) => {
               
               {/* Image Container */}
               <div className="absolute inset-4 rounded-full overflow-hidden glass flex items-center justify-center">
-                {profileImage ? (
-                  <img
-                    src={profileImage}
-                    alt="Shubashis Mete"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="text-center text-muted-foreground">
-                    <Camera className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                    <p className="text-sm">Upload Photo</p>
-                  </div>
-                )}
-                
-                {/* Upload Overlay */}
-                <label
-                  className={`absolute inset-0 bg-background/80 flex items-center justify-center cursor-pointer transition-opacity duration-300 z-20 ${
-                    isHovering || !profileImage ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                    className="hidden"
-                  />
-                  <div className="text-center">
-                    <Camera className="w-12 h-12 mx-auto mb-2 text-primary" />
-                    <span className="text-sm font-medium">
-                      {profileImage ? 'Change Photo' : 'Upload Photo'}
-                    </span>
-                  </div>
-                </label>
+                <img
+                  src="/profile.png"
+                  alt="Shubashis Mete"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Floating Elements */}
