@@ -60,7 +60,8 @@ const HeroSection = ({ profileImage, onImageUpload }: HeroSectionProps) => {
                 View My Work
               </a>
               <a
-                href="#contact"
+                href="/resume.pdf"
+                download="Shubashis_Mete_Resume.pdf"
                 className="px-8 py-4 glass-hover rounded-full font-semibold"
               >
                 <Download className="inline-block mr-2 w-5 h-5" />
