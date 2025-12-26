@@ -14,6 +14,8 @@ const HeroSection = ({ profileImage, onImageUpload }: HeroSectionProps) => {
     if (file) {
       onImageUpload(file);
     }
+    // Reset value to allow selecting the same file again
+    e.target.value = '';
   };
 
   return (
@@ -126,7 +128,7 @@ const HeroSection = ({ profileImage, onImageUpload }: HeroSectionProps) => {
                 
                 {/* Upload Overlay */}
                 <label
-                  className={`absolute inset-0 bg-background/80 flex items-center justify-center cursor-pointer transition-opacity duration-300 ${
+                  className={`absolute inset-0 bg-background/80 flex items-center justify-center cursor-pointer transition-opacity duration-300 z-20 ${
                     isHovering || !profileImage ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
