@@ -45,8 +45,8 @@ const HeroSection = () => {
                 View My Work
               </a>
               <a
-                href="/Shubashis_Mete_Resume.pdf"
-                download="Shubashis_Mete_Resume.pdf"
+                href="/Shubashis_Mete_CV.pdf"
+                download="Shubashis_Mete_CV.pdf"
                 className="px-8 py-4 glass-hover rounded-full font-semibold"
               >
                 <Download className="inline-block mr-2 w-5 h-5" />
