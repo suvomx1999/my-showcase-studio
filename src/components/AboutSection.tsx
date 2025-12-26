@@ -12,7 +12,6 @@ const education = [
     institution: 'Douglas Memorial Higher Secondary School',
     degree: 'Higher Secondary Certificate',
     location: 'Kolkata, WB',
-    period: 'Mar. 2020 – Feb 2022',
     current: false,
   },
 ];
